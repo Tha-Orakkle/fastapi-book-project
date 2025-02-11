@@ -23,5 +23,13 @@ jobs:
           pip install -r requirements.txt
 
       - name: Run tests
+        id: tests
         run: |
           pytest
+
+      - name: Close PR if Tests Fail
+        if: failure()
+        run: gh pr close ${{ github.event.pull_request.html_url }} --comment "Closing PR because tests failed. Please fix and reopen."
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
