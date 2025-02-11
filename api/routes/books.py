@@ -78,3 +78,5 @@ async def get_book(book_id: int) -> OrderedDict[int, Book | None]:
             'detail': 'Book not found'
         }
     )
+
+
