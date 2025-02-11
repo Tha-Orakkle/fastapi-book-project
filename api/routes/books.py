@@ -73,7 +73,7 @@ async def get_book(book_id: int) -> OrderedDict[int, Book | None]:
             content=book.model_dump()
         )
     return JSONResponse(
-        status_code=status.HTTP_200_OK),
+        status_code=status.HTTP_404_NOT_FOUND,
         content={
             'detail': 'Book not found'
         }
