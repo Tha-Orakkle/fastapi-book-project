@@ -129,40 +129,6 @@ The API includes proper error handling for:
 - Invalid genre types
 - Malformed requests
 
-### `GET /api/v1/books/{book_id}`
-
-Retrieve a specific book by its ID.
-
-#### Request
-
-- **Path Parameter:**
-  - `book_id` (integer, required): The ID of the book to retrieve.
-
-#### Response
-
-- **200 OK:**
-
-  - **Content-Type:** `application/json`
-  - **Body:**
-    ```json
-    {
-      "id": 3,
-      "title": "Book Title",
-      "author": "Author Name",
-      "publication_year": 2024,
-      "genre": "Fantasy"
-    }
-    ```
-
-- **404 Not Found:**
-  - **Content-Type:** `application/json`
-  - **Body:**
-    ```json
-    {
-      "detail": "Book not found"
-    }
-    ```
-
 ## Contributing
 
 1. Fork the repository
